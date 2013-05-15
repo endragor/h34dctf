@@ -23,7 +23,7 @@
             <fieldset class="form-rules">
               <h2 class="form-signin-heading">Main</h2>
 			  <p><b>[ENG]</b></p>
-				See tab Rules
+				See tab CTF Rules
 			  <p><b>[RUS]</b></p>
 			  <p>Если Вы хотите прийти к нам и послушать доклады, пообщаться и посмотреть за ходом соревнований пройдите <a href="https://docs.google.com/forms/d/1trb61PF9QnaeGt3vLjEMarZzWy9QJLWdVU5RXZrVAaE/viewform">регистрацию</a>.</p>
 			  <p>Команды, которые хотят принять участие регистрируются на вкладке Register Team.</p>
@@ -32,6 +32,14 @@
           <div class="tab-pane fade" id="create">
             <fieldset class="form-signin">
 			  <h2 class="form-signin-heading">Register Team</h2>
+			  <div class="alert alert-error" id="register-error" style="display: none">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<div id="registerError"></div>
+			  </div>
+			  <div class="alert alert-success" id="register-success" style="display: none">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<div id="registerSuccess"></div>
+			  </div>
               <label for="team">Team Name*</label>
               <input name="team" type="text" value="" class="input-block-level">
               <label for="email">Email*</label>
@@ -53,18 +61,10 @@
               <div>
                 <button id="submit_register" class="btn btn-large btn-primary">Create Account</button>
               </div>
-			  <div class="alert alert-error" id="register-error" style="display: none">
-				<button type="button" class="close" data-dismiss="alert">×</button>
-				<div id="registerError"></div>
-			  </div>
-			  <div class="alert alert-success" id="register-success" style="display: none">
-				<button type="button" class="close" data-dismiss="alert">×</button>
-				<div id="registerSuccess"></div>
-			  </div>
             </fieldset>
           </div>
           <div class="tab-pane fade" id="participants">
-            <fieldset class="form-signin">
+            <fieldset class="form-participants">
               <h2 class="form-signin-heading">Participants</h2>
 				<table class="table table-bordered">
 					<tr><td>Team name</td><td>Country</td><td>From Novosibirsk</td></tr>
@@ -137,5 +137,3 @@
     </div>
   </div>
 </template>
-
-
