@@ -57,6 +57,7 @@ function setRegisterError(error) {
 
 function setRegisterSuccess() {
 	$('#registerSuccess').html('You have successfully signed up.');
+	$('#register-error').hide();
 	$('#register-success').show();
 }
 Template.login.teams = function() {

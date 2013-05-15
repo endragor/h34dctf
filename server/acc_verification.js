@@ -25,7 +25,7 @@ Accounts.validateNewUser(function(user) {
 	
 	if (fromNovosib) {
 		if (!(parseInt(user.profile.team_size, 10) > 0)) {
-			throw new Meteor.Error(403, 'Team size cannot be less than 1');
+			throw new Meteor.Error(403, 'Bad team size');
 		}
 	}
 
