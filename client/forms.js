@@ -30,7 +30,7 @@ Template.login.events({
 				if (error) {
 					setRegisterError(error);
 				} else {
-					alert('TODO: Switch to participants tab!');
+					setRegisterSuccess();
 				}
 			});
 		} catch(e) {
@@ -55,6 +55,10 @@ function setRegisterError(error) {
 	$('#register-error').show();
 }
 
+function setRegisterSuccess() {
+	$('#registerSuccess').html('You have successfully signed up.');
+	$('#register-success').show();
+}
 Template.login.teams = function() {
     return Meteor.users.find({});
 };

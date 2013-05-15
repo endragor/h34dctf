@@ -9,16 +9,23 @@
 <template name="login">
   <div id="loginModal">
     <div class="modal-header">
-      <h3 id="fire" style="background: #000; color: #666;">h34dCTF</h3>
+      <a href="http://h34dump.com"><h3 id="fire" style="background: #000; color: #666;">h34dCTF</h3></a>
     </div>
     <div class="modal-body">
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#create" data-toggle="tab">Register Team</a></li>
-          <li><a href="#participants" data-toggle="tab">Participants</a></li>
-		  <li><a href="#rules" data-toggle="tab">Rules</a></li>
+		  <li class="active"><a href="#main" data-toggle="tab">Main</a></li>
+          <li><a href="#create" data-toggle="tab">Register Team</a></li>
+          <li><a href="#participants" data-toggle="tab">Participants Team</a></li>
+		  <li><a href="#rules" data-toggle="tab">CTF Rules</a></li>
         </ul>
         <div id="myTabContent" class="tab-content">
-          <div class="tab-pane active in" id="create">
+		  <div class="tab-pane active in" id="main">
+            <fieldset class="form-rules">
+              <h2 class="form-signin-heading">Main</h2>
+			  Здесь текст от Руслана Анатольевича
+            </fieldset>
+		  </div>
+          <div class="tab-pane fade" id="create">
             <fieldset class="form-signin">
 			  <h2 class="form-signin-heading">Register Team</h2>
               <label for="team">Team Name*</label>
@@ -42,9 +49,13 @@
               <div>
                 <button id="submit_register" class="btn btn-large btn-primary">Create Account</button>
               </div>
-			  <div class="alert" id="register-error" style="display: none">
+			  <div class="alert alert-error" id="register-error" style="display: none">
 				<button type="button" class="close" data-dismiss="alert">×</button>
 				<div id="registerError"></div>
+			  </div>
+			  <div class="alert alert-success" id="register-success" style="display: none">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<div id="registerSuccess"></div>
 			  </div>
             </fieldset>
           </div>
@@ -60,7 +71,7 @@
             </fieldset>
           </div>
 		  <div class="tab-pane fade" id="rules">
-            <fieldset class="form-signin">
+            <fieldset class="form-rules">
               <h2 class="form-signin-heading">h34dCTF rules</h2>
 				<p><b>[ENG]</b></p>
 				<p><u>Information:</u></p>
@@ -74,7 +85,7 @@
 				<p>3) Any kind of attack (such as DoS, bruteforce, etc.) at game servers or other teams is prohibited. Those teams who ignore this rule will be disqualified.</p>
 				<p>4) The competition will last for 6 hours.</p>
 				<p>5) Organizers may change the rules before and during the challenge.</p>
-				<p>If you have any questions please feel free to contact us at team[at]h34dump.com</p>
+				<p>If you have any questions please feel free to contact us at <a href="mailto:team@h34dump.com?Subject=CTF_Question">team[at]h34dump.com</a></p>
 				<br/>
 				<p><b>[RUS]</b></p>
 				<p><u>Информация:</u><p>
@@ -86,10 +97,10 @@
 				<p>1) К участию в соревнованиях допускаются только зарегистрированные команды. Зарегистрироваться можно до 23 мая.</p>
 				<p>2) В команде может быть неограниченное количество участников.</p>
 				<p>3) Запрещены любые атаки на машины жюри и других участников (такие как DoS, bruteforce и другие), если не сказано обратное. Команды, которые нарушат это правило, будут дисквалифицированы.</p>
-				<p>4) Соревнование продлится 6 часов.</p>
+				<p>4) Соревнование продлится 6 часов, точное время начала будет здесь <a href="http://vk.com/h34dCTF">http://vk.com/h34dCTF</a>.</p>
 				<p>5) Организаторы в праве менять правила до и во время соревнований.</p>
-				<p><b>6) Для команд из новосибирска предполагается очное участие в технопарке.</b></p>
-				<p>Если у вас возникли какие-либо вопросы вы может связаться с нами по team[at]h34dump.com;</p>
+				<p><b>6) Для команд из новосибирска подразумевается очное участие в технопарке, ул.Николаева 11, Центр информационных технологий.</b></p>
+				<p>Если у вас возникли какие-либо вопросы вы может связаться с нами по <a href="mailto:team@h34dump.com?Subject=CTF_Question">team[at]h34dump.com</a></p>
             </fieldset>
           </div>
         </div>
