@@ -3,8 +3,9 @@ Accounts.validateNewUser(function(user) {
 		throw new Meteor.Error(403, 'Profile required');
 	}
 
+	var usernameRe = /^[a-z 0-9_]+$/i;
 	var username = user.username;
-	if (!username || typeof(username) !== 'string' || username.length < 0 || username === 'h34dump') {
+	if (!username || typeof(username) !== 'string' || !usernameRe.test(username) || username === 'h34dump') {
 		throw new Meteor.Error(403, 'Bad username');
 	}
 
@@ -16,6 +17,12 @@ Accounts.validateNewUser(function(user) {
 	var emailRe = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	if (!emailRe.test(email)) {
 		throw new Meteor.Error(403, 'Bad email');
+	}
+
+	var countryRe = /^[a-z ]*$/i;
+	var country = user.profile.country;
+	if (country && (typeof(country) !== 'string' || !countryRe.test(country))) {
+		throw new Meteor.Error(403, 'Bad country');
 	}
 
 	var fromNovosib = user.profile.from_novosib;
