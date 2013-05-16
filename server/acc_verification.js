@@ -22,10 +22,14 @@ Accounts.validateNewUser(function(user) {
 	if (typeof(fromNovosib) !== 'boolean') {
 		throw new Meteor.Error(403, 'Bad checkbox value');
 	}
-	
+
 	if (fromNovosib) {
-		if (!(parseInt(user.profile.team_size, 10) > 0)) {
+		if (user.profile.team_size === null || isNaN(user.profile.team_size) || parseInt(user.profile.team_size, 10) < 1) {
 			throw new Meteor.Error(403, 'Bad team size');
+		}
+
+		if (user.profile.notebooks === null || isNaN(user.profile.notebooks) || parseInt(user.profile.notebooks, 10) < 0) {
+			throw new Meteor.Error(403, 'Bad notebooks amount');
 		}
 	}
 
