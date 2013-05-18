@@ -60,6 +60,10 @@ function setRegisterSuccess() {
 	$('#register-error').hide();
 	$('#register-success').show();
 }
+
 Template.login.teams = function() {
-    return Meteor.users.find({});
+	var i = 1;
+    return Meteor.users.find({}).map(function(user) {
+        return _.extend(user, {number: i++});
+    });
 };
