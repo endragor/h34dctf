@@ -67,3 +67,23 @@ Template.login.teams = function() {
         return _.extend(user, {number: i++});
     });
 };
+
+function runCountdown() {
+	var ts = (new Date()).getTime() + ((new Date(Date.UTC(2013, 4, 23, 11-7, 0, 0))).getTime() - (new Date()).getTime());
+	$('#countdown').countdown({
+		timestamp	: ts,
+		callback	: function(days, hours, minutes, seconds){
+			var message = "Before h34dCTF ";
+			
+			message += days + " day" + ( days==1 ? '':'s' ) + ", ";
+			message += hours + " hour" + ( hours==1 ? '':'s' ) + ", ";
+			message += minutes + " minute" + ( minutes==1 ? '':'s' ) + " and ";
+			message += seconds + " second" + ( seconds==1 ? '':'s' ) + " <br />";
+			$('#noteCountdown').html(message);
+		}
+	});
+}
+
+Template.login.created = function() {
+	runCountdown();
+};
